@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/web-synth-v1/static/css/main.5a74f290.css",
+    "main.js": "/web-synth-v1/static/js/main.14a960a7.js",
+    "index.html": "/web-synth-v1/index.html",
+    "main.5a74f290.css.map": "/web-synth-v1/static/css/main.5a74f290.css.map",
+    "main.14a960a7.js.map": "/web-synth-v1/static/js/main.14a960a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a74f290.css",
+    "static/js/main.14a960a7.js"
+  ]
+}
