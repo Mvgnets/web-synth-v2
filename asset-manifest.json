@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/web-synth-v1/static/js/main.b7ebf7df.js",
-    "index.html": "/web-synth-v1/index.html",
-    "main.b7ebf7df.js.map": "/web-synth-v1/static/js/main.b7ebf7df.js.map"
+    "main.js": "/web-synth-v2/static/js/main.b7ebf7df.js",
+    "index.html": "/web-synth-v2/index.html",
+    "main.b7ebf7df.js.map": "/web-synth-v2/static/js/main.b7ebf7df.js.map"
   },
   "entrypoints": [
     "static/js/main.b7ebf7df.js"
