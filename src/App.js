@@ -26,7 +26,7 @@ function App() {
           Web Synth v2
         </Typography>
         <Grid container spacing={1} sx={{ mb: 2 }} alignItems="stretch">
-          <Grid item md={6}>
+          <Grid item xs={12} md={6}>
             <Paper sx={{ backgroundColor: '#1a223f' }}>
               <Stack>
                 <Osc1 />
@@ -34,7 +34,7 @@ function App() {
               </Stack>
             </Paper>
           </Grid>
-          <Grid item md={6}>
+          <Grid item xs={12} md={6}>
             <Paper sx={{ backgroundColor: '#1a223f', height: '100%' }}>
               <Filter />
             </Paper>
