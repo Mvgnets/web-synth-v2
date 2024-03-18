@@ -7,13 +7,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Paper, Stack } from '@mui/material';
+import { Grid, Paper, Stack } from '@mui/material';
 
 
 function App() {
 
   return (
-    <Container component="main" sx={{ borderRadius: 2, backgroundColor: '#111936' }}>
+    <Container component="main" maxWidth="lg" sx={{ borderRadius: 2, backgroundColor: '#111936' }}>
       <CssBaseline />
       <Box
         sx={{
@@ -25,27 +25,35 @@ function App() {
         <Typography variant="h3" sx={{ mb: 1, color: 'white' }}>
           Web Synth v2
         </Typography>
-        <Stack spacing={1} sx={{ mb: 2 }}>
-          <Stack direction={'row'} justifyContent={'space-around'} spacing={1}>
+        <Grid container spacing={1} sx={{ mb: 2 }} alignItems="stretch">
+          <Grid item md={6}>
             <Paper sx={{ backgroundColor: '#1a223f' }}>
               <Stack>
                 <Osc1 />
                 <ADSR />
               </Stack>
             </Paper>
-            <Paper sx={{ backgroundColor: '#1a223f' }}>
+          </Grid>
+          <Grid item md={6}>
+            <Paper sx={{ backgroundColor: '#1a223f', height: '100%' }}>
               <Filter />
             </Paper>
-          </Stack>
-          <Paper sx={{
-            py: 3,
-            backgroundColor: '#1a223f', display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}>
-            <Keyboard />
-          </Paper>
-        </Stack>
+          </Grid>
+          <Grid item xs={12}>
+
+            <Paper sx={{
+              py: 3,
+              backgroundColor: '#1a223f', display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+
+
+            }}>
+              <Keyboard />
+            </Paper>
+          </Grid>
+        </Grid>
+
       </Box>
     </Container>
   );
