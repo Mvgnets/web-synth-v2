@@ -47,7 +47,8 @@ export function reducer(state, action) {
         case "CHANGE_OSC1_TYPE":
             return { ...state, osc1Settings: { ...state.osc1Settings, type: id } }
         case "CHANGE_FILTER":
-            filter[id].value = value;
+            console.log(value)
+            filter.frequency.value = value;
             return { ...state, filterSettings: { ...state.filterSettings, [id]: value } }
         case "CHANGE_FILTER_TYPE":
             filter.type = id;

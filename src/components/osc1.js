@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CTX } from "../context/store";
+import { Box, Button, ButtonGroup, Slider, Typography } from "@mui/material";
 
 
 const Osc1 = () => {
@@ -7,8 +8,8 @@ const Osc1 = () => {
     let { type, detune } = appState.osc1Settings;
 
     const change = e => {
-        let { id, value } = e.target;
-        updateState({ type: "CHANGE_OSC1", payload: { id, value } })
+        let { name, value } = e.target;
+        updateState({ type: "CHANGE_OSC1", payload: { id: name, value } })
     }
 
     const changeType = e => {
@@ -16,26 +17,30 @@ const Osc1 = () => {
         updateState({ type: "CHANGE_OSC1_TYPE", payload: { id } })
     }
 
+    const selectedType = (inputType) => {
+        if (inputType === type) {
+            return 'contained'
+        }
+        return 'outlined'
+    }
+
     return (
-        <div className='control'>
-            <h2>Osc1</h2>
-            <div className="param">
-                <h3>Detune</h3>
-                <input
-                    value={detune}
-                    onChange={change}
-                    type="range"
-                    id='detune'
-                />
-            </div>
-            <div className="param">
-                <h3>Wave</h3>
-                <button id='sine' onClick={changeType} className={`${type === "sine" && "active"}`}>Sine</button>
-                <button id='triangle' onClick={changeType} className={`${type === "triangle" && "active"}`}>Triangle</button>
-                <button id='square' onClick={changeType} className={`${type === "square" && "active"}`}>Square</button>
-                <button id='sawtooth' onClick={changeType} className={`${type === "sawtooth" && "active"}`}>Sawtooth</button>
-            </div>
-        </div>
+        <Box sx={{ px: 3, py: 2 }}>
+            <Typography variant="h4" sx={{ color: 'white', mb: 1 }}>Osc1</Typography>
+            <Box sx={{ px: 2 }}>
+                <Typography variant="h5" sx={{ color: 'white', mb: 1 }}>Detune</Typography>
+                <Slider aria-label="Detune" name='detune' value={detune} onChange={(e) => change(e)} sx={{ py: 2 }} />
+            </Box>
+            <Box sx={{ px: 2 }}>
+                <Typography variant="h5" sx={{ color: 'white', mb: 1 }}>Wave</Typography>
+                <ButtonGroup>
+                    <Button id='sine' onClick={changeType} variant={selectedType('sine')}>Sine</Button>
+                    <Button id='triangle' onClick={changeType} variant={selectedType('triangle')}>Triangle</Button>
+                    <Button id='square' onClick={changeType} variant={selectedType('square')} >Square</Button>
+                    <Button id='sawtooth' onClick={changeType} variant={selectedType('sawtooth')}>Sawtooth</Button>
+                </ButtonGroup>
+            </Box>
+        </Box>
     )
 }
 
