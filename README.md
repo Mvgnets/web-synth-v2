@@ -1,6 +1,9 @@
-# web-synth-v1
+# web-synth-v2
 
 This project uses the Web Audio API to create a basic synthesiser that the user can run in a browser. 
+
+Check it out here
+https://mvgnets.github.io/web-synth-v2/
 
 Pull the project
 npm i
